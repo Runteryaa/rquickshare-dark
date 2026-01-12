@@ -161,7 +161,7 @@ import { EndpointInfo } from '@martichou/core_lib/bindings/EndpointInfo';
 import { OutboundPayload } from '@martichou/core_lib/bindings/OutboundPayload';
 import { Visibility } from '@martichou/core_lib/bindings/Visibility';
 
-import { ToastNotification, ToDelete, stateToDisplay, autostartKey, DisplayedItem, useToastStore, opt, ToastType, utils } from '../vue_lib';
+import { ToastNotification, ToDelete, stateToDisplay, autostartKey, DisplayedItem, useToastStore, opt, ToastType, utils, Theme } from '../vue_lib';
 
 import SettingsModal from '../composables/SettingsModal.vue';
 import Heading from '../composables/Heading.vue';
@@ -221,6 +221,7 @@ export default {
 			realclose: ref<boolean>(false),
 			startminimized: ref<boolean>(false),
 			visibility: ref<Visibility>('Visible'),
+			theme: ref<Theme>('System'),
 			downloadPath: ref<string | undefined>(),
 
 			hostname: ref<string>(),
@@ -237,6 +238,7 @@ export default {
 			this.version = await getVersion();
 
 			await this.getVisibility(this);
+			await this.getTheme(this)
 
 			if (!await this.store.has(autostartKey)) {
 				await this.setAutoStart(this, true);
