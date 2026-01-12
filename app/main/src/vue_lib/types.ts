@@ -1,6 +1,7 @@
 import { State } from '@martichou/core_lib/bindings/State';
 import { DeviceType } from '@martichou/core_lib/bindings/DeviceType';
 import { Visibility } from '@martichou/core_lib/bindings/Visibility';
+
 export type Theme = 'Light' | 'Dark' | 'System';
 
 export interface ToDelete {

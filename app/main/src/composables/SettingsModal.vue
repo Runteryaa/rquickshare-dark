@@ -59,19 +59,19 @@ function openDownloadPicker() {
 				</div>
 				<div class="form-control hover:bg-gray-500 hover:bg-opacity-10 dark:hover:bg-white dark:hover:bg-opacity-10 rounded-xl p-3">
 					<label class="cursor-pointer flex flex-row justify-between items-center">
-                      <span class="label-text">Theme</span>
-                      <select
-                        class="bg-transparent text-right focus:outline-none cursor-pointer dark:bg-slate-800"
-                        :value="vm.theme"
-                        @change="utils.setTheme(vm, ($event.target as HTMLSelectElement).value as any)"
-                      >
-                        <option value="System" class="text-black dark:text-white dark:bg-slate-700">System</option>
-                        <option value="Light" class="text-black dark:text-white dark:bg-slate-700">Light</option>
-                        <option value="Dark" class="text-black dark:text-white dark:bg-slate-700">Dark</option>
-                      </select>
-                    </label>
-                  </div>
-                  <div class="form-control hover:bg-gray-500 hover:bg-opacity-10 dark:hover:bg-white dark:hover:bg-opacity-10 rounded-xl p-3">
+						<span class="label-text">Theme</span>
+						<select
+							class="bg-transparent text-right focus:outline-none cursor-pointer"
+							:value="vm.theme"
+							@change="utils.setTheme(vm, ($event.target as HTMLSelectElement).value as any)"
+						>
+							<option value="System" class="text-black dark:text-white dark:bg-slate-700">System</option>
+							<option value="Light" class="text-black dark:text-white dark:bg-slate-700">Light</option>
+							<option value="Dark" class="text-black dark:text-white dark:bg-slate-700">Dark</option>
+						</select>
+					</label>
+				</div>
+				<div class="form-control hover:bg-gray-500 hover:bg-opacity-10 dark:hover:bg-white dark:hover:bg-opacity-10 rounded-xl p-3">
 					<label class="cursor-pointer flex flex-col items-start" @click="openDownloadPicker()">
 						<span class="">Change download folder</span>
 						<span class="overflow-hidden whitespace-nowrap text-ellipsis text-xs max-w-80 opacity-70">

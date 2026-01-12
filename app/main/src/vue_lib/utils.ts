@@ -93,12 +93,12 @@ async function getStartMinimized(vm: TauriVM) {
 }
 
 function updateThemeClass(theme: Theme) {
- 	const isDark = theme === 'Dark' || (theme === 'System' && window.matchMedia('(prefers-color-scheme: dark)').matches);
-    if (isDark) {
-    	document.documentElement.classList.add('dark');
-    } else {
-      	document.documentElement.classList.remove('dark');
-    }
+	const isDark = theme === 'Dark' || (theme === 'System' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+	if (isDark) {
+		document.documentElement.classList.add('dark');
+	} else {
+		document.documentElement.classList.remove('dark');
+	}
 }
 
 async function setTheme(vm: TauriVM, theme: Theme) {
@@ -109,10 +109,9 @@ async function setTheme(vm: TauriVM, theme: Theme) {
 }
 
 async function getTheme(vm: TauriVM) {
-  	vm.theme = (await vm.store.get(themeKey)) as Theme ?? 'System';
-  	updateThemeClass(vm.theme);
+	vm.theme = (await vm.store.get(themeKey)) as Theme ?? 'System';
+	updateThemeClass(vm.theme);
 }
-
 
 async function setVisibility(vm: TauriVM, visibility: Visibility) {
 	await vm.invoke('change_visibility', { message: visibility });
@@ -241,9 +240,8 @@ export const utils = {
 	getLatestVersion,
 	setStartMinimized,
 	getStartMinimized,
-    setTheme,
-    getTheme,
+	setTheme,
+	getTheme,
 	updateThemeClass
-
 };
 export type UtilsType = typeof utils;
